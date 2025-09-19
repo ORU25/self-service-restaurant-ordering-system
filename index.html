@@ -4,58 +4,193 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SelfService Restaurant</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" href="img/logo.png" />
   </head>
-  <body>
+  <body class=" text-dark d-flex flex-column min-vh-100">
+    <!-- Header -->
     <header>
-      <img src="logo.png" alt="logo" />
-      SelfService Restaurant
-      <nav>
-        <ul>
-          <li><a href="index.html">Beranda</a></li>
-          <li><a href="about.html">Tentang Kami</a></li>
-          <li><a href="help.html">Bantuan</a></li>
-          <li><a href="login.html">Login</a></li>
-        </ul>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+          <!-- Logo -->
+          <a
+            class="navbar-brand fw-bold text-warning d-flex gap-2 align-items-center"
+            href="#"
+          >
+            <img
+              src="img/logo.png"
+              alt="Logo"
+              width="50"
+              class="d-inline-block align-text-top me-2 rounded-circle"
+            />
+            SelfService Restaurant
+          </a>
+
+          <!-- Burger Button -->
+          <button
+            class="navbar-toggler "
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Menu Items -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto ">
+              <li class="nav-item">
+                <a class="nav-link active text-warning" aria-current="page" href="index.html">Beranda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="about.html"
+                  >Tentang Kami</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-light" href="help.html">Bantuan</a>
+              </li>
+              <li class="nav-item">
+                <a class="btn btn-warning ms-lg-3 my-3 my-lg-0" href="login.html">Login Admin</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </header>
-    <hr>
-    <main>
-      <section>
-        <h1>Selamat Datang</h1>
-        <p>
-          Selamat datang di SelfService Restaurant, tempat di mana Anda dapat
-          menikmati hidangan lezat dengan cara yang mudah dan cepat. Silakan
-          pilih menu favorit Anda dan nikmati pengalaman bersantap yang
-          menyenangkan!
+
+    <!-- Main Content -->
+    <main class="bg-body-secondary pt-5 flex-grow-1">
+      <section class="container text-center mb-5">
+        <h1 class="fw-bold text-dark">SELAMAT DATANG</h1>
+        <p class="lead">
+          Nikmati pengalaman bersantap praktis di
+          <span class="text-warning fw-bold">SelfService Restaurant</span>.
+          Pilih menu favorit Anda, pesan dengan mudah, dan rasakan kelezatan
+          setiap hidangan!
         </p>
+        <!-- Tombol trigger modal -->
+        <button
+          class="btn btn-danger btn-lg mt-3"
+          data-bs-toggle="modal"
+          data-bs-target="#pesanModal"
+        >
+          Pesan Sekarang
+        </button>
       </section>
-      <section>
-        <h3>Promo Menarik</h3>
-        <img src="promo.jpg" alt="promo" />
-        <img src="promo1.jpg" alt="promo1" />
-        <img src="promo2.jpg" alt="promo2" />
-      </section>
-      <section>
-        <h3>Pesan Sekarang</h3>
-        <ul>
-          <li><a href="dine-in.html">Makan Ditempat</a></li>
-          <li><a href="takeaway.html">Bawa Pulang</a></li>
-        </ul>
-      </section>
-      <section>
-        <img src="banner" alt="banner" />
-        <img src="banner1" alt="banner1" />
-        <img src="banner2" alt="banner2" />
+
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffc107" fill-opacity="1" d="M0,64L24,69.3C48,75,96,85,144,117.3C192,149,240,203,288,218.7C336,235,384,213,432,181.3C480,149,528,107,576,96C624,85,672,107,720,133.3C768,160,816,192,864,192C912,192,960,160,1008,138.7C1056,117,1104,107,1152,96C1200,85,1248,75,1296,96C1344,117,1392,171,1416,197.3L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path></svg>
+
+      <section class="text-center bg-warning py-5 min-vh-100">
+        <h3 class="fw-bold text-dark mb-5">Promo Menarik</h3>
+        <div class="container">
+          <div class="row justify-content-center g-4">
+            <!-- Card 1 -->
+            <div class="col-md-4">
+              <div class="card shadow h-100">
+                <img src="img/promo1.png" class="card-img-top" alt="Promo 1" />
+                <div class="card-body">
+                  <h5 class="card-title text-warning fw-bold">Diskon 30%</h5>
+                  <p class="card-text">
+                    Nikmati semua menu favorit dengan potongan harga spesial
+                    bulan ini.
+                  </p>
+                  <a href="#" class="btn btn-danger">Pesan Sekarang</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-md-4">
+              <div class="card shadow h-100">
+                <img src="img/promo2.png" class="card-img-top" alt="Promo 2" />
+                <div class="card-body">
+                  <h5 class="card-title text-warning fw-bold">
+                    Gratis Minuman
+                  </h5>
+                  <p class="card-text">
+                    Setiap pembelian paket hemat, dapatkan minuman segar gratis.
+                  </p>
+                  <a href="#" class="btn btn-danger">Pesan Sekarang</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-md-4">
+              <div class="card shadow h-100">
+                <img src="img/promo3.png" class="card-img-top" alt="Promo 3" />
+                <div class="card-body">
+                  <h5 class="card-title text-warning fw-bold">Paket Hemat</h5>
+                  <p class="card-text">
+                    Mulai dari Rp15.000, nikmati menu hemat lezat untuk semua
+                    orang.
+                  </p>
+                  <a href="#" class="btn btn-danger">Pesan Sekarang</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
-    <hr>
-    <footer>
-      <p>callCenter: 123-456-789</p>
-      <p>&copy; 2024 SelfService Restaurant. All rights reserved.</p>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="pesanModal"
+      tabindex="-1"
+      aria-labelledby="pesanModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header bg-dark text-warning">
+            <h5 class="modal-title" id="pesanModalLabel">Pilih Opsi Pesanan</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="mb-4">Silakan pilih jenis pesanan Anda:</p>
+            <div class="d-flex justify-content-center gap-3">
+              <button class="btn btn-warning">🍽️ Makan di Tempat</button>
+              <button class="btn btn-danger">📦 Bawa Pulang</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3">
+      <p class="mb-0">Call Center: 123-456-789</p>
+      <p class="mb-0">
+        &copy; 2024 SelfService Restaurant. All rights reserved.
+      </p>
       <p>
         Referensi:
-        <a href="https://www.mcdonalds.com">System SelfService McD</a>
+        <a href="https://www.mcdonalds.com" class="text-warning"
+          >System SelfService McD</a
+        >
       </p>
     </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
