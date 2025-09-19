@@ -10,9 +10,14 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
     <link rel="icon" href="img/logo.png" />
   </head>
-  <body class=" text-dark d-flex flex-column min-vh-100">
+  <body class="text-dark d-flex flex-column min-vh-100">
     <!-- Header -->
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -33,7 +38,7 @@
 
           <!-- Burger Button -->
           <button
-            class="navbar-toggler "
+            class="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarNav"
@@ -46,9 +51,15 @@
 
           <!-- Menu Items -->
           <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto ">
+            <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link active text-warning" aria-current="page" href="index.html">Beranda</a>
+                <a
+                  class="nav-link active text-warning"
+                  aria-current="page"
+                  href="index.html"
+                >
+                  Beranda</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link text-light" href="about.html"
@@ -59,7 +70,13 @@
                 <a class="nav-link text-light" href="help.html">Bantuan</a>
               </li>
               <li class="nav-item">
-                <a class="btn btn-warning ms-lg-3 my-3 my-lg-0" href="login.html">Login Admin</a>
+                <a
+                  class="btn btn-outline-warning ms-lg-3 my-3 my-lg-0"
+                  href="login.html"
+                >
+                  <i class="fa-solid fa-arrow-right-to-bracket me-1"></i>
+                  Login Admin
+                </a>
               </li>
             </ul>
           </div>
@@ -69,7 +86,7 @@
 
     <!-- Main Content -->
     <main class="bg-body-secondary pt-5 flex-grow-1">
-      <section class="container text-center mb-5">
+      <section class="container text-center my-5">
         <h1 class="fw-bold text-dark">SELAMAT DATANG</h1>
         <p class="lead">
           Nikmati pengalaman bersantap praktis di
@@ -79,15 +96,21 @@
         </p>
         <!-- Tombol trigger modal -->
         <button
-          class="btn btn-danger btn-lg mt-3"
+          class="btn btn-danger btn-lg mt-3 fw-bold"
           data-bs-toggle="modal"
           data-bs-target="#pesanModal"
         >
-          Pesan Sekarang
+          <i class="fa-solid fa-utensils me-1"></i> Pesan Sekarang
         </button>
       </section>
 
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#ffc107" fill-opacity="1" d="M0,64L24,69.3C48,75,96,85,144,117.3C192,149,240,203,288,218.7C336,235,384,213,432,181.3C480,149,528,107,576,96C624,85,672,107,720,133.3C768,160,816,192,864,192C912,192,960,160,1008,138.7C1056,117,1104,107,1152,96C1200,85,1248,75,1296,96C1344,117,1392,171,1416,197.3L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"></path></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#ffc107"
+          fill-opacity="1"
+          d="M0,64L24,69.3C48,75,96,85,144,117.3C192,149,240,203,288,218.7C336,235,384,213,432,181.3C480,149,528,107,576,96C624,85,672,107,720,133.3C768,160,816,192,864,192C912,192,960,160,1008,138.7C1056,117,1104,107,1152,96C1200,85,1248,75,1296,96C1344,117,1392,171,1416,197.3L1440,224L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"
+        ></path>
+      </svg>
 
       <section class="text-center bg-warning py-5 min-vh-100">
         <h3 class="fw-bold text-dark mb-5">Promo Menarik</h3>
@@ -154,7 +177,9 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header bg-dark text-warning">
-            <h5 class="modal-title" id="pesanModalLabel">Pilih Opsi Pesanan</h5>
+            <h5 class="modal-title" id="pesanModalLabel">
+              <i class="fa-solid fa-bag-shopping me-2"></i> Pilih Opsi Pesanan
+            </h5>
             <button
               type="button"
               class="btn-close btn-close-white"
@@ -162,11 +187,15 @@
               aria-label="Close"
             ></button>
           </div>
-          <div class="modal-body text-center">
-            <p class="mb-4">Silakan pilih jenis pesanan Anda:</p>
+          <div class="modal-body text-center my-3">
+            <p class="mb-4 fs-5">Silakan pilih jenis pesanan Anda:</p>
             <div class="d-flex justify-content-center gap-3">
-              <button class="btn btn-warning">🍽️ Makan di Tempat</button>
-              <button class="btn btn-danger">📦 Bawa Pulang</button>
+              <button class="btn btn-lg btn-warning d-flex align-items-center gap-2">
+                <i class="fa-solid fa-utensils"></i> Makan di Tempat
+              </button>
+              <button class="btn btn-lg btn-danger d-flex align-items-center gap-2">
+                <i class="fa-solid fa-box"></i> Bawa Pulang
+              </button>
             </div>
           </div>
         </div>
@@ -175,16 +204,18 @@
 
     <!-- Footer -->
     <footer class="bg-dark text-light text-center py-3">
-      <p class="mb-0">Call Center: 123-456-789</p>
-      <p class="mb-0">
-        &copy; 2024 SelfService Restaurant. All rights reserved.
-      </p>
-      <p>
-        Referensi:
-        <a href="https://www.mcdonalds.com" class="text-warning"
-          >System SelfService McD</a
-        >
-      </p>
+      <div class="container">
+        <p class="mb-0">Call Center: 123-456-789</p>
+        <p class="mb-0">
+          &copy; 2024 SelfService Restaurant. All rights reserved.
+        </p>
+        <p>
+          Referensi:
+          <a href="https://www.mcdonalds.com" class="text-warning"
+            >System SelfService McD</a
+          >
+        </p>
+      </div>
     </footer>
 
     <script
