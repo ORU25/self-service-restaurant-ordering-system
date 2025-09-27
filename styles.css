@@ -1,0 +1,175 @@
+/* styles.css - Custom enhancements */
+:root {
+  --color-primary: #ffc107;
+  --color-accent: #dc3545;
+  --color-dark: #212529;
+  --radius-sm: 0.4rem;
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+/* Navbar refinement */
+.navbar {
+  transition: background-color var(--transition-base),
+    box-shadow var(--transition-base), padding var(--transition-base);
+}
+.navbar-scrolled {
+  background: rgba(33, 37, 41, 0.92) !important;
+  box-shadow: 0 4px 18px -4px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(6px);
+  padding-top: 0.35rem;
+  padding-bottom: 0.35rem;
+}
+
+/* Hero section */
+.hero-section {
+  position: relative;
+}
+.hero-section:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #fff, #ffe08a 60%, #ffd35b);
+  opacity: 0.55;
+  z-index: -1;
+  border-radius: 1.25rem;
+}
+.hero-section h1 {
+  letter-spacing: 1px;
+}
+.hero-section .btn-danger {
+  box-shadow: 0 8px 18px -6px rgba(220, 53, 69, 0.55);
+  transition: var(--transition-base);
+}
+.hero-section .btn-danger:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -4px rgba(220, 53, 69, 0.65);
+}
+
+.floating-emblem {
+  position: absolute;
+  top: -55px;
+  right: 40px;
+  animation: floatY 6s ease-in-out infinite;
+}
+@keyframes floatY {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(14px);
+  }
+}
+
+/* Cards */
+.card {
+  border: none;
+  border-radius: 1rem;
+  overflow: hidden;
+  transform: translateY(25px);
+  opacity: 0;
+  transition: var(--transition-base);
+}
+.card-reveal {
+  transform: translateY(0);
+  opacity: 1;
+}
+.card:hover {
+  box-shadow: 0 12px 30px -8px rgba(0, 0, 0, 0.35);
+}
+.card .card-title {
+  font-weight: 700;
+}
+.promo-image {
+  transition: filter var(--transition-base), transform var(--transition-base);
+}
+.card:hover .promo-image {
+  filter: brightness(1.05) saturate(1.15);
+  transform: scale(1.03);
+}
+
+/* Order summary */
+#orderSummary .card {
+  border-left: 6px solid #28a745;
+}
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  box-shadow: 0 6px 18px -4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: var(--transition-base);
+  z-index: 1200;
+  font-size: 1.05rem;
+}
+#backToTop:hover {
+  background: #bb2433;
+}
+#backToTop.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Toast override */
+#toastContainer .toast-body {
+  font-size: 0.9rem;
+}
+
+/* Promo text emphasis */
+#selectedPromo {
+  transition: color var(--transition-base);
+}
+#selectedPromo:not(:empty) {
+  color: #111;
+}
+
+/* Simple fade animation for pseudo animate__ classes */
+.animate__animated.animate__fadeIn {
+  animation: fade-in 0.6s ease;
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Accessibility focus */
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Footer */
+footer {
+  font-size: 0.9rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 575.98px) {
+  .floating-emblem {
+    display: none !important;
+  }
+  .hero-section {
+    padding-top: 3rem !important;
+  }
+}
